@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4075503-71F3-4B98-97FD-05B4900AEA44}"
 	ProjectSection(SolutionItems) = preProject
 		RabbitMQ\docker-compose.yml = RabbitMQ\docker-compose.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
@@ -29,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {355EC47F-6845-4990-9C14-0FB2344E4151}
 	EndGlobalSection
 EndGlobal

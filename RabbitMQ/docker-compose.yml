@@ -4,5 +4,7 @@ services:
         image: rabbitmq:3
         hostname: my-rabbitmq
         environment:
-            - RABBITMQ_DEFAULT_USER=user
-            - RABBITMQ_DEFAULT_PASS=123456
+          - RABBITMQ_DEFAULT_USER=user
+          - RABBITMQ_DEFAULT_PASS=123456
+        ports:
+         - 5672:5672
