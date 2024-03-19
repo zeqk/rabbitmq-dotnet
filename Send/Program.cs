@@ -16,14 +16,22 @@ channel.QueueDeclare(queue: "hello",
                      autoDelete: false,
                      arguments: null);
 
-const string message = "Hello World!";
-var body = Encoding.UTF8.GetBytes(message);
+while (true)
+{
+    try
+    {
+        Console.WriteLine("Write your message:");
+        var message = Console.ReadLine();
+        var body = Encoding.UTF8.GetBytes(message ?? "No message");
 
-channel.BasicPublish(exchange: string.Empty,
-                     routingKey: "hello",
-                     basicProperties: null,
-                     body: body);
-Console.WriteLine($" [x] Sent {message}");
-
-Console.WriteLine(" Press [enter] to exit.");
-Console.ReadLine();
+        channel.BasicPublish(exchange: string.Empty,
+                             routingKey: "hello",
+                             basicProperties: null,
+                             body: body);
+        Console.WriteLine($" [x] Sent {message}");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex);
+    }
+}
